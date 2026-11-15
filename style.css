@@ -253,6 +253,116 @@ footer {
     }
 }
 
+/* ============================================
+   LKP 3A: DAFTAR TUGAS (To-Do List)
+   ============================================ */
+
+#form-todo {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+#form-todo input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#form-todo button {
+    padding: 10px 16px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#stats {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+#list-todo {
+    list-style: none;
+}
+
+#list-todo li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+#list-todo li.kosong {
+    justify-content: center;
+    color: #999;
+}
+
+#list-todo .teks {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+#list-todo li.selesai .teks {
+    text-decoration: line-through;
+    color: #999;
+}
+
+#list-todo .hapus {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    #form-todo button:hover {
+        background: #004a99;
+    }
+
+    #list-todo .hapus:hover {
+        background: #c0392b;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #form-todo input[type="text"] {
+        background: #1e2a36;
+        color: #e0e0e0;
+        border-color: #3a4a5a;
+    }
+
+    #stats {
+        color: #aaa;
+    }
+
+    #list-todo li {
+        border-bottom-color: #2a2a2a;
+    }
+
+    #list-todo li.selesai .teks,
+    #list-todo li.kosong {
+        color: #888;
+    }
+}
+
+@media print {
+    #form-todo,
+    #list-todo .hapus {
+        display: none;
+    }
+}
+
 /* Cetak / Save as PDF */
 @media print {
     nav {
